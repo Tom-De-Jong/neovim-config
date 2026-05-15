@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Neovim Cheatsheet</title>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Fragment+Mono&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --bg: #0d0d0d;
+      --surface: #141414;
+      --border: #2a2a2a;
+      --accent: #c3e88d;
+      --text: #d4d4d4;
+      --muted: #555;
+      --header-font: 'JetBrains Mono', monospace;
+      --body-font: 'Fragment Mono', monospace;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--body-font);
+      min-height: 100vh;
+      padding: 48px 32px;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: repeating-linear-gradient(
+        0deg, transparent, transparent 2px,
+        rgba(0,0,0,0.07) 2px, rgba(0,0,0,0.07) 4px
+      );
+      pointer-events: none;
+      z-index: 999;
+    }
+
+    header {
+      margin-bottom: 40px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 20px;
+    }
+
+    header h1 {
+      font-family: var(--header-font);
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    header h1 span { color: var(--muted); }
+
+    header p {
+      font-size: 0.7rem;
+      color: var(--muted);
+      margin-top: 6px;
+    }
+
+    .table {
+      width: 100%;
+      max-width: 640px;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    /* ── TO ADD A COMMAND: copy a .cmd block below ── */
+    .cmd {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 12px 20px;
+      border-bottom: 1px solid var(--border);
+      transition: background 0.15s;
+    }
+
+    .cmd:last-child { border-bottom: none; }
+    .cmd:hover { background: rgba(255,255,255,0.03); }
+
+    .desc {
+      font-size: 0.78rem;
+      color: var(--text);
+      opacity: 0.85;
+    }
+
+    .keys {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      flex-shrink: 0;
+    }
+
+    kbd {
+      display: inline-block;
+      padding: 2px 8px;
+      background: #1e1e1e;
+      border: 1px solid var(--border);
+      border-bottom: 2px solid #333;
+      border-radius: 3px;
+      font-family: var(--header-font);
+      font-size: 0.7rem;
+      color: var(--accent);
+      white-space: nowrap;
+    }
+
+    .sep {
+      color: var(--muted);
+      font-size: 0.65rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1><span>//</span> nvim cheatsheet</h1>
+    <p>copy a .cmd block in the HTML to add more commands</p>
+  </header>
+
+  <div class="table">
+
+    <!-- copy this block to add a new command -->
+    <div class="cmd">
+      <span class="desc">Search</span>
+      <span class="keys">
+        <kbd>/</kbd>
+      </span>
+    </div>
+
+    <div class="cmd">
+      <span class="desc">Copy</span>
+      <span class="keys">
+        <kbd>v</kbd>
+        <span class="sep">→</span>
+        <kbd>select</kbd>
+        <span class="sep">→</span>
+        <kbd>y</kbd>
+      </span>
+    </div>
+
+    <div class="cmd">
+      <span class="desc">Change to explorer</span>
+      <span class="keys">
+        <kbd>Ctrl</kbd><span class="sep">+</span><kbd>w</kbd>
+        <span class="sep">→</span>
+        <kbd>h</kbd>
+      </span>
+    </div>
+
+    <div class="cmd">
+      <span class="desc">Change tab</span>
+      <span class="keys">
+        <kbd>Space</kbd><span class="sep">+</span><kbd>b</kbd>
+        <span class="sep">→</span>
+        <kbd>j</kbd>
+      </span>
+    </div>
+
+      <div class="cmd">
+      <span class="desc">Open tab in split</span>
+      <span class="keys">
+        <kbd>ctrl</kbd><span class="sep">+</span><kbd>v</kbd>
+        <span class="sep"> for vertical</span>
+        <br>
+         <kbd>ctrl</kbd><span class="sep">+</span><kbd>x</kbd>
+        <span class="sep"> for horizontal</span>
+      </span>
+    </div>
+
+  </div>
+
+</body>
+</html>
